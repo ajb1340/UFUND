@@ -1,0 +1,132 @@
+/* NeedsComponent's private CSS styles */
+.needs {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: auto; /* Allow the width to adjust automatically */
+  }
+  
+  .needs li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em; /* Add space between list items */
+  }
+  
+  .needs button {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em; /* Add margin for spacing */
+    padding: 0; /* Reset padding */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    height: 2em; /* Increased height for better usability */
+    padding-left: 10px; /* Add padding to make the button more spacious */
+    padding-right: 10px; /* Add padding to make the button more spacious */
+  }
+  
+  .needs button:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+    left: .1em;
+  }
+  
+  .needs button:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+  
+  .needs .id {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.4em 0.7em;
+    background-color: #405061;
+    line-height: 1em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+    flex-shrink: 0; /* Prevent the ID from shrinking */
+  }
+  
+  .needs .name {
+    flex: 1;
+    align-self: center;
+    padding: 0.4em 0.3em;
+    white-space: nowrap; /* Prevent wrapping */
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  
+  input {
+    padding: .5rem;
+    width: 100%;
+    max-width: 600px; /* Max width for inputs */
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 1em; /* Space between input fields */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    border-radius: 4px; /* Rounded corners for inputs */
+  }
+  
+  input:focus {
+    outline: #336699 auto 1px; /* Focus outline */
+  }
+  
+  ul.search-result {
+    margin-top: 0;
+    padding-left: 0;
+  }
+  
+  .search-result li {
+    list-style-type: none; /* Remove list style */
+  }
+  
+  .search-result li a {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    padding: .5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .search-result li a:hover {
+    background-color: #435A60; /* Hover effect */
+    color: white;
+  }
+  
+  /* Style for the "Add New Need" button */
+  .add-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 1.2em; /* Larger text */
+    padding: 12px 24px; /* Increase padding for a bigger button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 1em; /* Space above the button */
+    width: 100%; /* Make the button full-width */
+    text-align: center; /* Center the text inside */
+  }
+  
+  .add-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .add-button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+  }
+  

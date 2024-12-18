@@ -1,0 +1,114 @@
+<h2>Admin Dashboard</h2>
+<!-- If we are logged in, display needs-->
+<!-- <div *ngIf="isLoggedIn; else notLoggedIn">
+</div> -->
+<div>
+    <nav>
+        <a routerLink="/logout">Logout</a>
+    </nav>
+    <!-- Statistics Component -->
+     
+<!-- <div class="statistics" *ngIf="isLoggedIn"> -->
+        <h3>Dashboard Statistics</h3>
+    <ul>
+        <li>Number of Users: {{ numUsers }}</li>
+        <li>Total Number of Needs: {{ totalAmountOfNeeds }}</li>
+        <li>Total Needs Purchased: {{ totalAmountOfNeedsPurchased }}</li>
+        <li>Total Money Raised: ${{ amountMoneyRaised.toFixed(2) }}</li>
+        <li>Average Cost of Needs: ${{ averageCostOfNeeds.toFixed(2) }}</li>
+    </ul>
+<!-- </div> -->
+    <!-- Needs List -->
+    <ul class="needs">
+        <li *ngFor="let need of needs">
+            <button type="button" class="need-button" (click)="onSelect(need)">
+                <span class="id">{{ need.id }}</span>
+                <span class="name">{{ need.name }}</span>
+            </button>
+            <button type="button" class="delete" title="Delete need" (click)="delete(need)">Delete Need</button>
+        </li>
+    </ul>
+    
+    <!-- Selected Need Details -->
+    <div *ngIf="selectedNeed" class="selected-need">
+        <h2>{{ selectedNeed.name | uppercase }} Details</h2>
+        <div>Id: {{ selectedNeed.id }}</div>
+    
+        <div>
+            <label for="need-name">Need Name:</label>
+            <input id="need-name" [(ngModel)]="selectedNeed.name" (ngModelChange)="updateNeed()" placeholder="Enter name">
+        </div>
+    
+        <div>
+            <label for="need-cost">Cost:</label>
+            <input id="need-cost" type="number" [(ngModel)]="selectedNeed.cost" (ngModelChange)="updateNeed()"
+                placeholder="Enter cost">
+        </div>
+    
+        <div>
+            <label for="need-quantity">Quantity:</label>
+            <input id="need-quantity" type="number" [(ngModel)]="selectedNeed.quantity" (ngModelChange)="updateNeed()"
+                placeholder="Enter quantity">
+        </div>
+    
+        <div>
+            <label for="need-type">Type:</label>
+            <input id="need-type" [(ngModel)]="selectedNeed.type" (ngModelChange)="updateNeed()" placeholder="Enter type">
+        </div>
+    
+        <div>
+            <label for="need-fulfilled">Is Fulfilled:</label>
+            <input id="need-fulfilled" type="checkbox" [(ngModel)]="selectedNeed.isFulfilled"
+                (ngModelChange)="updateNeed()">
+        </div>
+    </div>
+    
+    
+    <!-- Add New Need -->
+    <div class="add-need">
+        <h3>Add a New Need</h3>
+    
+        <div>
+            <label for="new-need-name">Need Name:</label>
+            <input id="new-need-name" #needName placeholder="Enter new need name" />
+        </div>
+    
+        <div>
+            <label for="new-need-cost">Cost:</label>
+            <input id="new-need-cost" type="number" #needCost placeholder="Enter cost" />
+        </div>
+    
+        <div>
+            <label for="new-need-quantity">Quantity:</label>
+            <input id="new-need-quantity" type="number" #needQuantity placeholder="Enter quantity" />
+        </div>
+    
+        <div>
+            <label for="new-need-type">Type:</label>
+            <input id="new-need-type" #needType placeholder="Enter type" />
+        </div>
+    
+        <div>
+            <label for="new-need-fulfilled">Is Fulfilled:</label>
+            <input id="new-need-fulfilled" type="checkbox" #isFulfilled />
+        </div>
+    
+        <button type="button" class="add-button" (click)="addNeed(needName.value, +needCost.value, +needQuantity.value, needType.value, isFulfilled.checked); 
+                      needName.value=''; 
+                      needCost.value=''; 
+                      needQuantity.value=''; 
+                      needType.value=''; 
+                      isFulfilled.checked=false;">
+            Add Need
+        </button>
+    </div>
+</div>
+
+
+<!-- If we are not logged in, display login link-->
+<!-- <ng-template #notLoggedIn>
+    <nav>
+        <a routerLink="/login">Log in</a>
+    </nav>
+    Not logged in!
+</ng-template> -->

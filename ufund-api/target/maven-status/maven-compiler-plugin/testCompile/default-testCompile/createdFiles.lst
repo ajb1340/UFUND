@@ -1,0 +1,6 @@
+com\ufund\api\ufundapi\AccountFileDAOTest.class
+com\ufund\api\ufundapi\CupboardFileDAOTest.class
+com\ufund\api\ufundapi\FundingBasketFileDAOTest.class
+com\ufund\api\ufundapi\NeedTest.class
+StatisticsDAOTest.class
+com\ufund\api\ufundapi\CupboardDAOTest.class
